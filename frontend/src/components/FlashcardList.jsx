@@ -38,7 +38,7 @@ const FlashcardList = () => {
               <div className="text-pretty overflow-y-scroll scroll-smooth  ">
                 <strong>{flashcards[currentIndex].answer}</strong>
                 <div>
-                <button className="mt-4 bg-black  bottom-1 right-28 text-white rounded-lg px-4 py-2 "
+                <button className="mt-4 bg-black bottom-1 right-28 text-white rounded-lg px-4 py-2 "
                     onClick={() => deleteFlashcard(flashcards[currentIndex]._id)}>
                     Delete
               </button>    

@@ -6,14 +6,9 @@ function App() {
     const [flashcards, setFlashcards] = useState([]);
 
     const fetchFlashcards = () => {
-       try{
         axios.get('https://fashing-card-hh47.vercel.app/flashcards')
-        .then(response => setFlashcards(response.data))
-        .catch(error => console.error('Error fetching flashcards:', error));
-       }catch(error){
-        console.log('error');
-        
-       }
+            .then(response => setFlashcards(response.data))
+            .catch(error => console.error('Error fetching flashcards:', error));
     };
 
     return (
