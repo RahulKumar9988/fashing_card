@@ -8,7 +8,7 @@ const FlashcardForm = ({ fetchFlashcards }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('https://your-app-name.netlify.app/flashcards', { question, answer })
+        axios.post('https://fashing-card-hh47.vercel.app/flashcards', { question, answer })
         .then(() => {
             fetchFlashcards();
             setQuestion('');

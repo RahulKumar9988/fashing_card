@@ -20,7 +20,7 @@ const flashcardSchema = new mongoose.Schema({
 
 const Flashcard = mongoose.model('Flashcard', flashcardSchema);
 
-app.use(cors({ origin: 'https://fashing-card.vercel.app' }));
+app.use('/*', cors());
 // CRUD Routes
 
 app.post('/flashcards', async (req, res) => {
