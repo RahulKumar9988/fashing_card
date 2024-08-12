@@ -8,14 +8,14 @@ const FlashcardForm = ({ fetchFlashcards }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('https://fashing-card-hh47.vercel.app/flashcards', { question, answer })
-            .then(() => {
-                fetchFlashcards();
-                setQuestion('');
-                setAnswer('');
-            })
-            .catch(error => console.error('Error adding flashcard:', error));
-            window.location.reload();
+        axios.post('https://your-app-name.netlify.app/flashcards', { question, answer })
+        .then(() => {
+            fetchFlashcards();
+            setQuestion('');
+            setAnswer('');
+        }).catch(error => console.error('Error adding flashcard:', error));
+
+        window.location.reload();
     };
 
     return (
