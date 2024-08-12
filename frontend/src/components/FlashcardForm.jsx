@@ -14,11 +14,8 @@ const FlashcardForm = ({ fetchFlashcards }) => {
             setQuestion('');
             setAnswer('');
         }).catch(error => console.error('Error adding flashcard:', error));
-
         
     };
-
-    window.location.reload();
     
     return (
         <form className="flex flex-col md:flex-row text-center gap-4 md:gap-10" onSubmit={handleSubmit}>
