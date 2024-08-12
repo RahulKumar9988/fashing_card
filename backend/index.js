@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors());
+
 app.use(express.json());
 
 // MongoDB connection
@@ -21,7 +21,9 @@ const flashcardSchema = new mongoose.Schema({
 
 const Flashcard = mongoose.model('Flashcard', flashcardSchema);
 
+app.use('/*', cors());
 // CRUD Routes
+
 app.post('/flashcards', async (req, res) => {
     const { question, answer } = req.body;
     const flashcard = new Flashcard({ question, answer });
@@ -47,7 +49,7 @@ app.delete('/flashcards/:id', async (req, res) => {
     res.status(204).send();
 });
 
-// Start server
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
