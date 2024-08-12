@@ -15,6 +15,9 @@ const FlashcardList = () => {
     axios.delete(`https://fashing-card-hh47.vercel.app/flashcards/${id}`)
       .then(() => setFlashcards(flashcards.filter(fc => fc._id !== id)))
       .catch(error => console.error('Error deleting flashcard:', error));
+      setTimeout(function(){
+        window.location.reload();
+     },1000);
   };
   
   const handleNext = () => {
