@@ -6,13 +6,13 @@ const FlashcardList = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/flashcards')
+    axios.get('https://fashing-card-hh47.vercel.app/flashcards')
       .then(response => setFlashcards(response.data))
       .catch(error => console.error('Error fetching flashcards:', error));
   }, []);
 
   const deleteFlashcard = (id) => {
-    axios.delete(`http://localhost:3000/flashcards/${id}`)
+    axios.delete(`https://fashing-card-hh47.vercel.app/flashcards/${id}`)
       .then(() => setFlashcards(flashcards.filter(fc => fc._id !== id)))
       .catch(error => console.error('Error deleting flashcard:', error));
   };
@@ -38,7 +38,7 @@ const FlashcardList = () => {
               <div className="text-pretty overflow-y-scroll scroll-smooth  ">
                 <strong>{flashcards[currentIndex].answer}</strong>
                 <div>
-                <button className="mt-4 bg-black absolute bottom-1 right-28 text-white rounded-lg px-4 py-2 "
+                <button className="mt-4 bg-black  bottom-1 right-28 text-white rounded-lg px-4 py-2 "
                     onClick={() => deleteFlashcard(flashcards[currentIndex]._id)}>
                     Delete
               </button>    

@@ -8,7 +8,7 @@ const FlashcardForm = ({ fetchFlashcards }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3000/flashcards', { question, answer })
+        axios.post('https://fashing-card-hh47.vercel.app/flashcards', { question, answer })
             .then(() => {
                 fetchFlashcards();
                 setQuestion('');
