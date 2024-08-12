@@ -15,7 +15,7 @@ const FlashcardForm = ({ fetchFlashcards }) => {
             setAnswer('');
         }).catch(error => console.error('Error adding flashcard:', error));
 
-        window.location.reload();
+        
     };
 
     return (
