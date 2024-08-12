@@ -16,7 +16,7 @@ const FlashcardList = () => {
       .then(() => setFlashcards(flashcards.filter(fc => fc._id !== id)))
       .catch(error => console.error('Error deleting flashcard:', error));
   };
-
+  window.location.reload();
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % flashcards.length);
   };
