@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import DottedButton from './DottedButton';
+import BasicAlerts from './BasicAlerts';
+
 
 const FlashcardForm = ({ fetchFlashcards }) => {
     const [question, setQuestion] = useState('');
@@ -13,10 +15,16 @@ const FlashcardForm = ({ fetchFlashcards }) => {
             fetchFlashcards();
             setQuestion('');
             setAnswer('');
+            
         }).catch(error => console.error('Error adding flashcard:', error));
         setTimeout(function(){
             window.location.reload();
         }, 1000);
+        
+
+        
+
+        
     };  
     
     return (

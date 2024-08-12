@@ -12,10 +12,16 @@ function App() {
     };
 
     return (
-        <div className='bg-black h-screen text-white flex flex-col items-center'>
-            <h1 className='text-2xl'>Flashcard Dashboard</h1>
+        <div className='bg-black h-screen text-white flex flex-col items-center mt-7'>
+            <div className='flex gap-10 '>
+                <img className='rounded-3xl h-10 ' src="./logo.jpg" alt="" />
+                <h1 className='text-xl font-semibold mb-5 md:text-4xl'>Flashcard Dashboard</h1>
+                
+            </div>
+            
             <FlashcardForm fetchFlashcards={fetchFlashcards} />
             <FlashcardList flashcards={flashcards} />
+            
         </div>
     );
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import BasicAlerts from './BasicAlerts';
 
 const FlashcardList = () => {
   const [flashcards, setFlashcards] = useState([]);
@@ -17,7 +18,8 @@ const FlashcardList = () => {
       .catch(error => console.error('Error deleting flashcard:', error));
       setTimeout(function(){
         window.location.reload();
-     },1000);
+     },500);
+
   };
   
   const handleNext = () => {
@@ -29,8 +31,10 @@ const FlashcardList = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-xl mt-5 mb-4">Flashcards</h1>
+    <div className="container mx-auto p-4 flex flex-col justify-between items-center">
+      <div>
+        <h1 className="text-3xl font-bold mt-5 mb-4">Flashcards</h1>
+      </div>
       {flashcards.length > 0 && (
         <div className="flip-card relative h-64 w-full max-w-sm mx-auto cursor-pointer">
           <div className="flip-card-inner h-full w-full transition-transform transform-gpu duration-700">
@@ -47,12 +51,11 @@ const FlashcardList = () => {
               </button>    
                 </div>
               </div>
-                        
             </div>
           </div>
         </div>
       )}
-      <div className="flex justify-between mt-4">
+      <div className="flex gap-20 mt-4">
         <button
           className="bg-white text-black rounded-lg px-4 py-2"
           onClick={handlePrevious}
